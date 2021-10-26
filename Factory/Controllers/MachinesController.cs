@@ -38,7 +38,7 @@ namespace Factory.Controllers
         if (machine.MachineName == iteration.MachineName) 
         {
           isUnique = false;
-          ModelState.AddModelError("DuplicateName", iteration.MachineName + " is already enrolled");
+          ModelState.AddModelError("DuplicateName", iteration.MachineName + " is already in the factory");
           ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName");
           return View();
         }
