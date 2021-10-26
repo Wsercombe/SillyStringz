@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace SillyStringz.Controllers
+namespace Factory.Controllers
 {
     public class HomeController : Controller
     {

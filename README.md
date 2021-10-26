@@ -46,7 +46,7 @@ This web-based application allows a a user to be able to add a list of engineers
 
 ### Scaffold and connect the database
 * Launch the MySQL server with the command `mysql -uroot -p[YOUR-PASSWORD-HERE]`
-* In your terminal, navigate to the production project directory with the command `$ cd SillyStringz\SillyStringz`
+* In your terminal, navigate to the production project directory with the command `$ cd Factory\Factory`
 * In your terminal, create a file within the project in which to store your connection string for connecting the project to the database with the command `touch appsettings.json`
 * In your text editor add the following code to the newly created appsettings.json file. *Note that uid and pwd may vary depending on your local MySql configurations.
 ```

@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace SillyStringz
+namespace Factory
 {
   public class Program
   {

@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 // machine = student
-namespace SillyStringz.Models
+namespace Factory.Models
 
 {
   public class Machine

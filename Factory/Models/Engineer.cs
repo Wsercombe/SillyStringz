@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 
 // course = engineer
-namespace SillyStringz.Models
+namespace Factory.Models
 {
   public class Engineer
   {

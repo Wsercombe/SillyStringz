@@ -1,16 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using SillyStringz.Models;
+using Factory.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SillyStringz.Controllers
+namespace Factory.Controllers
 {
   public class EngineersController : Controller
   {
-    private readonly SillyStringzContext _db;
+    private readonly FactoryContext _db;
 
-    public EngineersController(SillyStringzContext db)
+    public EngineersController(FactoryContext db)
     {
       _db = db;
     }

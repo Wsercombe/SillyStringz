@@ -2,12 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SillyStringz.Models;
+using Factory.Models;
 
-namespace SillyStringz.Migrations
+namespace Factory.Migrations
 {
-    [DbContext(typeof(SillyStringzContext))]
-    partial class SillyStringzContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(FactoryContext))]
+    partial class FactoryContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -16,7 +16,7 @@ namespace SillyStringz.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("SillyStringz.Models.Engineer", b =>
+            modelBuilder.Entity("Factory.Models.Engineer", b =>
                 {
                     b.Property<int>("EngineerId")
                         .ValueGeneratedOnAdd()
@@ -33,7 +33,7 @@ namespace SillyStringz.Migrations
                     b.ToTable("Engineers");
                 });
 
-            modelBuilder.Entity("SillyStringz.Models.EngineerMachine", b =>
+            modelBuilder.Entity("Factory.Models.EngineerMachine", b =>
                 {
                     b.Property<int>("EngineerMachineId")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace SillyStringz.Migrations
                     b.ToTable("EngineerMachine");
                 });
 
-            modelBuilder.Entity("SillyStringz.Models.Machine", b =>
+            modelBuilder.Entity("Factory.Models.Machine", b =>
                 {
                     b.Property<int>("MachineId")
                         .ValueGeneratedOnAdd()
@@ -73,15 +73,15 @@ namespace SillyStringz.Migrations
                     b.ToTable("Machines");
                 });
 
-            modelBuilder.Entity("SillyStringz.Models.EngineerMachine", b =>
+            modelBuilder.Entity("Factory.Models.EngineerMachine", b =>
                 {
-                    b.HasOne("SillyStringz.Models.Engineer", "Engineer")
+                    b.HasOne("Factory.Models.Engineer", "Engineer")
                         .WithMany("JoinEntities")
                         .HasForeignKey("EngineerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SillyStringz.Models.Machine", "Machine")
+                    b.HasOne("Factory.Models.Machine", "Machine")
                         .WithMany("JoinEntities")
                         .HasForeignKey("MachineId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -92,12 +92,12 @@ namespace SillyStringz.Migrations
                     b.Navigation("Machine");
                 });
 
-            modelBuilder.Entity("SillyStringz.Models.Engineer", b =>
+            modelBuilder.Entity("Factory.Models.Engineer", b =>
                 {
                     b.Navigation("JoinEntities");
                 });
 
-            modelBuilder.Entity("SillyStringz.Models.Machine", b =>
+            modelBuilder.Entity("Factory.Models.Machine", b =>
                 {
                     b.Navigation("JoinEntities");
                 });

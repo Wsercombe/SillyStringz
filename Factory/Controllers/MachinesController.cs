@@ -1,17 +1,17 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using SillyStringz.Models;
+using Factory.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SillyStringz.Controllers
+namespace Factory.Controllers
 {
   public class MachinesController : Controller
   {
-    private readonly SillyStringzContext _db;
+    private readonly FactoryContext _db;
 
-    public MachinesController(SillyStringzContext db)
+    public MachinesController(FactoryContext db)
     {
       _db = db;
     }
