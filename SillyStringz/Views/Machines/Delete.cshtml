@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SillyStringz.Models.Machine
+
+<h2>Are you sure you want to terminate this machine? Give it a second chance?</h2>
+
+@Html.DisplayNameFor(model => model.MachineName): @Html.DisplayFor(model => model.MachineName)
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Terminate Machine" class = "btn-btn-danger"/>
+}
+@Html.ActionLink("Back to List", "Index")
