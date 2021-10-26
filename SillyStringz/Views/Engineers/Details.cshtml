@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SillyStringz.Models.Engineer;
+
+<h2>Engineer Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)</h3>
+<h3>@Html.DisplayNameFor(model => model.EngineerNumber): @Html.DisplayFor(model => model.EngineerNumber)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This engineer has no machines</p>
+}
+else
+{
+  <h4>Machines enrolled in the engineer:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Machine.MachineName</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to engineers", "Index")</p>
+<p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>

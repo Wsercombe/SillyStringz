@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SillyStringz.Models.Engineer
+
+<h4>Add a new engineer</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.EngineerName)
+  @Html.TextBoxFor(model => model.EngineerName)
+
+  @Html.LabelFor(model => model.EngineerNumber)
+  @Html.TextBoxFor(model => model.EngineerNumber)
+  <input type="submit" value="Add new engineer" />
+}
+<p>@Html.ActionLink("Engineer Page", "Index")</p>
