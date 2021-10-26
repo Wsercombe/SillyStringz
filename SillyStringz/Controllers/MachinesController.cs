@@ -49,7 +49,7 @@ namespace SillyStringz.Controllers
         _db.SaveChanges();
         if (EngineerId != 0)
         {
-          _db.Registrar.Add(new Registrar() { EngineerId = EngineerId, MachineId = machine.MachineId });
+          _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
         }
         _db.SaveChanges();
       }
@@ -77,7 +77,7 @@ namespace SillyStringz.Controllers
     {
       if (EngineerId != 0)
       {
-        _db.Registrar.Add(new Registrar() { EngineerId = EngineerId, MachineId = machine.MachineId });
+        _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
       }
       _db.Entry(machine).State = EntityState.Modified;
       _db.SaveChanges();
@@ -96,7 +96,7 @@ namespace SillyStringz.Controllers
     {
       if (EngineerId != 0)
       {
-      _db.Registrar.Add(new Registrar() { EngineerId = EngineerId, MachineId = machine.MachineId });
+      _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
       }
       _db.SaveChanges();
       return RedirectToAction("Index");
@@ -120,8 +120,8 @@ namespace SillyStringz.Controllers
     [HttpPost]
     public ActionResult DeleteEngineer(int joinId)
     {
-      Registrar joinEntry = _db.Registrar.FirstOrDefault(entry => entry.RegistrarId == joinId);
-      _db.Registrar.Remove(joinEntry);
+      EngineerMachine joinEntry = _db.EngineerMachine.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+      _db.EngineerMachine.Remove(joinEntry);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
