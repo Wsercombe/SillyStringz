@@ -20,7 +20,7 @@ namespace SillyStringz.Models
     public string MachineName { get; set; }
     [DisplayName("Machine Details")]
     [Required(ErrorMessage = "Machine Details are required")]
-    public DateTime MachineDetails {get; set;}
+    public string MachineDetails {get; set;}
 
     public virtual ICollection<EngineerMachine> JoinEntities { get;}
   }
